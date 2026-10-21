@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyeux anniversaire Angélia 🎉</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rose: #ff4d8d;
+      --violet: #7b2ff7;
+      --or: #ffc93c;
+      --nuit: #140a24;
+      --texte: #fff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--nuit);
+      color: var(--texte);
+      overflow-x: hidden;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 16px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255,77,141,.45), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(123,47,247,.5), transparent 50%),
+        var(--nuit);
+      position: relative;
+    }
+    .hero .petit { font-size: 1.1rem; letter-spacing: 4px; text-transform: uppercase; opacity: .8; }
+    .hero h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(3rem, 12vw, 7rem);
+      line-height: 1.5;
+      padding: 0 .2em .15em;
+      margin: 10px 0 0;
+      background: linear-gradient(90deg, var(--or), var(--rose), var(--violet));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .age {
+      font-size: clamp(6rem, 30vw, 14rem);
+      font-weight: 800;
+      line-height: 1;
+      margin-top: 10px;
+      color: var(--or);
+      text-shadow: 0 0 30px rgba(255,201,60,.6);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 50% { transform: scale(1.06); } }
+    .hero p.sous { font-size: 1.2rem; margin-top: 10px; max-width: 520px; }
+    .btn {
+      margin-top: 30px;
+      padding: 14px 32px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--rose), var(--violet));
+      color: #fff;
+      font: 600 1.1rem 'Poppins', sans-serif;
+      cursor: pointer;
+      box-shadow: 0 8px 25px rgba(255,77,141,.4);
+      transition: transform .2s;
+    }
+    .btn:hover { transform: scale(1.07); }
+    .scroll { position: absolute; bottom: 25px; font-size: 2rem; animation: bounce 1.5s infinite; text-decoration: none; }
+    @keyframes bounce { 50% { transform: translateY(10px); } }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 80px 16px; max-width: 1100px; margin: 0 auto; }
+    h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--rose);
+    }
+    .intro { text-align: center; max-width: 620px; margin: 0 auto 40px; opacity: .9; }
+
+    .galerie {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .photo {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0,0,0,.5);
+      transition: transform .3s;
+    }
+    .photo:nth-child(odd)  { transform: rotate(-2deg); }
+    .photo:nth-child(even) { transform: rotate(2deg); }
+    .photo:hover { transform: rotate(0) scale(1.04); z-index: 2; }
+    .photo img { width: 100%; height: 360px; object-fit: cover; display: block; }
+    .photo span {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 30px 12px 12px;
+      background: linear-gradient(transparent, rgba(0,0,0,.85));
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    /* Profil */
+    .profil {
+      list-style: none;
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .profil li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      padding: 14px 20px;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .profil li .emoji { font-size: 1.6rem; }
+    .profil li.alcool { border-color: rgba(255,201,60,.5); background: rgba(255,201,60,.1); }
+    .profil li.alcool.encore { font-size: 1.3rem; }
+    .profil li.alcool.toujours {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--or);
+      background: linear-gradient(90deg, rgba(255,77,141,.35), rgba(123,47,247,.35));
+      border-color: var(--or);
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    /* Lettre */
+    .lettre {
+      background: linear-gradient(135deg, rgba(255,77,141,.2), rgba(123,47,247,.2));
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 24px;
+      padding: 40px 28px;
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .lettre .signature { font-family: 'Pacifico', cursive; text-align: right; margin-top: 20px; font-size: 1.4rem; color: var(--or); }
+
+    footer { text-align: center; padding: 40px 16px; opacity: .6; font-size: .9rem; }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.92);
+      display: none; align-items: center; justify-content: center;
+      z-index: 100; padding: 16px; cursor: zoom-out;
+    }
+    .lightbox.ouverte { display: flex; }
+    .lightbox img, .lightbox video { max-width: 100%; max-height: 90vh; border-radius: 12px; display: none; }
+    .lightbox.mode-photo img, .lightbox.mode-video video { display: block; }
+    .lightbox video { cursor: default; }
+
+    /* Bouton lecture sur les photos qui ont une vidéo */
+    .photo.video::after {
+      content: '▶';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 64px; height: 64px;
+      display: flex; align-items: center; justify-content: center;
+      padding-left: 5px;
+      border-radius: 50%;
+      background: rgba(255,77,141,.85);
+      font-size: 1.6rem;
+      box-shadow: 0 0 25px rgba(255,77,141,.7);
+      pointer-events: none;
+    }
+
+    /* Confettis */
+    .confetti { position: fixed; top: -20px; width: 10px; height: 14px; z-index: 50; pointer-events: none; animation: tombe linear forwards; }
+    @keyframes tombe { to { transform: translateY(110vh) rotate(720deg); } }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="petit">🎂 Aujourd'hui c'est le grand jour 🎂</div>
+    <h1>Angélia</h1>
+    <div class="age">18</div>
+    <p class="sous">Majeure, vaccinée… et officiellement autorisée à faire ce qu'elle faisait déjà 😏🍾</p>
+    <button class="btn" onclick="confettis()">🎉 Fais la fête 🎉</button>
+    <a href="#profil" class="scroll">👇</a>
+  </header>
+
+  <!-- PROFIL -->
+  <section id="profil">
+    <h2>Le profil d'Angélia 📋</h2>
+    <p class="intro">Fiche technique officielle, validée par le duo.</p>
+    <ul class="profil">
+      <li><span class="emoji">🥰</span>Adorable</li>
+      <li><span class="emoji">🤗</span>Attentionnée</li>
+      <li class="alcool"><span class="emoji">🍷</span>Alcoolique</li>
+      <li><span class="emoji">🏃‍♀️</span>Sportive</li>
+      <li><span class="emoji">🤪</span>Toujours dans les plans foireux</li>
+      <li class="alcool encore"><span class="emoji">🍾</span>Encore alcoolique</li>
+      <li><span class="emoji">🫶</span>Toujours présente quand il faut !</li>
+      <li><span class="emoji">🤫</span>Discrète</li>
+      <li class="alcool toujours"><span class="emoji">🍻</span>ET encore et TOUJOURS ALCOOLIQUE</li>
+    </ul>
+  </section>
+
+  <!-- LE DUO D'ALCOOL -->
+  <section id="duo">
+    <h2>Le duo d'alcool 🍻</h2>
+    <p class="intro">Une bouteille, deux goulots imaginaires, zéro hésitation. Les preuves sont accablantes.</p>
+    <div class="galerie">
+      <div class="photo video" data-video="videos/duo-bouteille.mp4"><img src="images/duo-bouteille.jpg" alt="Le duo qui partage une bouteille"></div>
+      <div class="photo video" data-video="videos/fete-cul-sec.mp4"><img src="images/fete-cul-sec.jpg" alt="Angélia qui boit en soirée"></div>
+      <div class="photo"><img src="images/bouteilles.jpg" alt="Les bouteilles vides"></div>
+    </div>
+  </section>
+
+  <!-- SPORT -->
+  <section id="sport">
+    <h2>La sportive 🏃‍♀️</h2>
+    <p class="intro">Parce qu'il faut bien éliminer tout ça. Quand elle court pas en soirée, elle court pour être elle-même.</p>
+    <div class="galerie">
+      <div class="photo"><img src="images/course.jpg" alt="Angélia en pleine course"></div>
+      <div class="photo"><img src="images/footing.jpg" alt="Capture du footing"></div>
+      <div class="photo"><img src="images/strava-frejus.jpg" alt="Championnat de France de 5 km à Fréjus"></div>
+      <div class="photo"><img src="images/strava-escalade.jpg" alt="Course de l'Escalade 2025"></div>
+      <div class="photo"><img src="images/strava-ekiden.jpg" alt="Ekiden de Thonon-les-Bains"></div>
+      <div class="photo"><img src="images/strava-course-soir.jpg" alt="Course à pied le soir"></div>
+    </div>
+  </section>
+
+  <!-- SORTIES -->
+  <section id="sorties">
+    <h2>Les sorties 🪩</h2>
+    <p class="intro">Fêtes foraines, soirées, rues de nuit : toujours partante, toujours la dernière à rentrer.</p>
+    <div class="galerie">
+      <div class="photo"><img src="images/selfie-langue.jpg" alt="Selfie avec la langue tirée"></div>
+      <div class="photo"><img src="images/selfie-fete.jpg" alt="Selfie à la fête foraine"></div>
+      <div class="photo"><img src="images/miroir.jpg" alt="Photo miroir dans la rue"></div>
+      <div class="photo video" data-video="videos/poney.mp4"><img src="images/poney.jpg" alt="Un poney qui mange"></div>
+    </div>
+  </section>
+
+  <!-- MESSAGE -->
+  <section id="message">
+    <h2>Un petit mot 💌</h2>
+    <div class="lettre">
+      <p>Joyeux anniversaire Angélia ! 🎉</p>
+      <p>18 ans, ça se fête comme il se doit. J'attends ton retour pour qu'on fête ça ensemble correctement !</p>
+      <p>Ça fait 2 ans qu'on se connaît, et en 2 ans on a vécu plus de conneries ensemble que certains en toute une vie…</p>
+      <p>Longue vie à notre duo d'alcooliques fous 😂🍾❤️</p>
+      <p class="signature">— Ton partenaire de crime</p>
+    </div>
+  </section>
+
+  <footer>Fait avec ❤️ (et un peu de rosé) pour les 18 ans d'Angélia</footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Photo agrandie" id="lightbox-img">
+    <video id="lightbox-video" controls playsinline></video>
+  </div>
+
+  <script>
+    // Agrandir une photo (ou lancer sa vidéo) au clic
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightbox-img');
+    const lbVideo = document.getElementById('lightbox-video');
+
+    document.querySelectorAll('.photo').forEach(photo => {
+      photo.addEventListener('click', () => {
+        const video = photo.dataset.video;
+        if (video) {
+          lbVideo.src = video;
+          lightbox.className = 'lightbox ouverte mode-video';
+          lbVideo.play();
+        } else {
+          lbImg.src = photo.querySelector('img').src;
+          lightbox.className = 'lightbox ouverte mode-photo';
+        }
+      });
+    });
+
+    // Fermer en cliquant à côté (la vidéo reste cliquable)
+    lightbox.addEventListener('click', e => {
+      if (e.target === lbVideo) return;
+      lbVideo.pause();
+      lbVideo.removeAttribute('src');
+      lightbox.className = 'lightbox';
+    });
+
+    // Pluie de confettis
+    function confettis() {
+      const couleurs = ['#ff4d8d', '#7b2ff7', '#ffc93c', '#3cf0ff', '#fff'];
+      for (let i = 0; i < 120; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = Math.random() * 100 + 'vw';
+        c.style.background = couleurs[Math.floor(Math.random() * couleurs.length)];
+        c.style.animationDuration = 2 + Math.random() * 3 + 's';
+        c.style.animationDelay = Math.random() * 0.5 + 's';
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 6000);
+      }
+    }
+
+    // Confettis automatiques à l'ouverture
+    window.addEventListener('load', () => setTimeout(confettis, 500));
+  </script>
+</body>
+</html>
